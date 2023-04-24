@@ -1,3 +1,4 @@
+// new comment
 const App = () => {
   return (
     <div className='categories-container'>
