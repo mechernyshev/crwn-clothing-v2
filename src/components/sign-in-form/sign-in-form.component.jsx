@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import './sign-in.styles.scss'
 import {
     createAuthUserWithEmailAndPassword,
@@ -15,15 +15,13 @@ const defaultFormFields = {
 }
 
 const signInWithGoogle = async () => {
-    const {user} = await signInWithGooglePopup();
-    createUserDocumentFromAuth(user)
+    await signInWithGooglePopup();
 }
 const SignInForm = () => {
 
     const [formFields, setFormFields] = useState(defaultFormFields)
     const { email, password} = formFields
 
-    console.log(formFields)
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields)
@@ -34,8 +32,8 @@ const SignInForm = () => {
         // check if user is authenticatied
 
         try {
-            const response = await signInAuthUserWithEmailAndPassword(email, password)
-            console.log(response)
+            const {user} = await signInAuthUserWithEmailAndPassword(email, password)
+
             resetFormFields()
         }  catch (error) {
 
