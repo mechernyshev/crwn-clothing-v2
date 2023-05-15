@@ -1,11 +1,13 @@
-.categories-container {
+import styled from "styled-components";
+
+export const CategoriesContainer = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
+`
 
-.category-container {
+export const CategoryContainer = styled.div`
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
@@ -72,4 +74,8 @@
       font-size: 16px;
     }
   }
-}
+`
+
+
+
+
