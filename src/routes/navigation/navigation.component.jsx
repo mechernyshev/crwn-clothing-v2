@@ -16,7 +16,7 @@ import {signOutUser} from "../../utils/firebase/firebase.utils";
 const Navigation = () => {
    // const { currentUser} = useContext(UserContext)
     const currentUser = useSelector((state) => state.user.currentUser)
-    console.log(currentUser)
+
     const { isCartOpen } = useContext(CartContext)
 
     return (
