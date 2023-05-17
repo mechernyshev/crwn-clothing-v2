@@ -8,14 +8,17 @@ import Authentication from './routes/authentication/authentication.component';
 import Shop from './routes/shop/shop.component';
 import Checkout from './routes/checkout/checkout.component';
 import { setCurrentUser } from './store/user/user.action';
+import { setCategoriesMap} from "./store/categories/category.action";
+
 import {
     onAuthStateChangedListener,
-    createUserDocumentFromAuth,
+    createUserDocumentFromAuth, getCategoriesAndDocuments,
 } from './utils/firebase/firebase.utils';
 
 const App = () => {
     const dispatch = useDispatch();
 
+    // call to get user's info
     useEffect(() => {
         const unsubscribe = onAuthStateChangedListener((user) => {
             if (user) {
