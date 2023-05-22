@@ -10,9 +10,6 @@ const CheckoutItem = ({cartItem}) => {
     const {id, name, imageUrl, price, quantity} = cartItem
     const cartItems = useSelector(selectCartItems)
 
-    addItemToCart, clearItemFromCart, removeItemFromCart
-
-
     const clearItemHandler = () => dispatch(clearItemFromCart(cartItems, cartItem))
     const addItemHandler = () => dispatch(addItemToCart(cartItems,cartItem))
     const removeItemHandler = () => dispatch(removeItemFromCart(cartItems, cartItem))
