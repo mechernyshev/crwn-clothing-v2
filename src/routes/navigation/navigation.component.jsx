@@ -11,13 +11,14 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 import  {selectIsCartOpen} from "../../store/cart/cart.selector";
 
 import {signOutUser} from "../../utils/firebase/firebase.utils";
+import {selectCurrentUser} from "../../store/user/user.selector";
 
 
 const Navigation = () => {
    // const { currentUser} = useContext(UserContext)
-    const currentUser = useSelector((state) => state.user.currentUser)
 
-    const { isCartOpen } = useSelector(selectIsCartOpen)
+    const currentUser = useSelector(selectCurrentUser);
+    const isCartOpen = useSelector(selectIsCartOpen);
 
     return (
         <Fragment>
@@ -51,3 +52,6 @@ const Navigation = () => {
 }
 
 export default Navigation
+
+
+
