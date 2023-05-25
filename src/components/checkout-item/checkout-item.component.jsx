@@ -16,6 +16,7 @@ import {
     RemoveButton,
 } from './checkout-item.styles';
 
+
 const CheckoutItem = ({ cartItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
     const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const CheckoutItem = ({ cartItem }) => {
     const clearItemHandler = () => dispatch(clearItemFromCart(cartItem));
     const addItemHandler = () => dispatch(addItemToCart(cartItem));
     const removeItemHandler = () => dispatch(removeItemFromCart(cartItem));
+
 
     return (
         <CheckoutItemContainer>
